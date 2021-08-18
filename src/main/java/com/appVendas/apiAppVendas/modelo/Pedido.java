@@ -3,12 +3,18 @@ package com.appVendas.apiAppVendas.modelo;
 import java.time.LocalDate;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 @Entity
 public class Pedido {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long idPedido;
+	
 	private String cliente;
 	private String endereco;
 	private Float totalItens;
